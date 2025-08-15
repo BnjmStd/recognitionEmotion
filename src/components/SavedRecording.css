@@ -1,0 +1,39 @@
+.saved-audios-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.audio-card {
+  flex: 0 0 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ff6f61);
+  background-size: 400% 400%;
+  animation: gradientMove 6s ease infinite;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.audio-card.playing {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.audio-card:hover {
+  transform: scale(1.05);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

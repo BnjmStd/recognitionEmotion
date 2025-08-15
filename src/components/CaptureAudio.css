@@ -36,25 +36,15 @@
   }
 }
 
-.buttons-audio {
+.audio-controls {
   display: flex;
-  gap: 1rem;
-}
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
 
-.play-audio {
-  display: grid;
-  grid: [stack] 1fr / [stack] 1fr;
-}
-
-.play-audio > * {
-  grid-area: stack;
-}
-
-.play-audio .hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.play-audio .visible {
-  opacity: 1;
+  > li {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0.5rem;
+    border-radius: 100%;
+  }
 }
