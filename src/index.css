@@ -1,0 +1,127 @@
+@layer reset {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  :root {
+    interpolate-size: allow-keywords;
+    color-scheme: dark;
+
+    /* inline size */
+    --max-inline-width: 900px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: system-ui, sans-serif;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    line-height: 1.2;
+  }
+
+  p {
+    text-wrap: pretty;
+    line-height: 1.5;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  a:not([href]) {
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea más fluido */
+  }
+}
+
+@layer utility {
+  .landing-layout {
+    display: grid;
+    grid-template-columns:
+      [full-width] minmax(2rem, 1fr)
+      [content-start] min(var(--max-inline-width), 100% - 4rem)
+      [content-end] minmax(2rem, 1fr)
+      [full-width-end];
+  }
+
+  .landing-layout > * {
+    grid-column: content-start / content-end;
+  }
+}
+
+@layer capture-video {
+  .button-primary {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    padding-inline: 0.8rem;
+    padding-block: 0.6rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .capture-video, .capture-audio {
+    .capture-video--container, .capture-audio--container {
+      & > :first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & > :first-child {
+          margin-inline-end: auto;
+        }
+      }
+    }
+  }
+}

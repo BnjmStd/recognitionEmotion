@@ -1,0 +1,55 @@
+.capture-audio--aux {
+  display: grid;
+  gap: 2rem;
+}
+
+.capture-audio--preview-container {
+  border-radius: 0.75rem;
+  block-size: fit-content;
+  padding: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.3);
+
+  img {
+    max-width: 78px;
+    max-block-size: 78px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.capture-audio--preview {
+  display: flex;
+
+  > figure {
+    background-color: black;
+    border-radius: 0.75rem;
+  }
+}
+
+.audio-info {
+  display: flex;
+  inline-size: 100%;
+  padding-inline: 1rem;
+
+  > *:first-child {
+    margin-inline-end: auto;
+  }
+}
+
+.play-audio {
+  display: grid;
+  grid: [stack] 1fr / [stack] 1fr;
+}
+
+.play-audio > * {
+  grid-area: stack;
+}
+
+.play-audio .hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.play-audio .visible {
+  opacity: 1;
+}

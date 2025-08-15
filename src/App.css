@@ -1,0 +1,11 @@
+.main-section {
+  min-block-size: 100vh;
+  background-color: #101a23;
+  padding-block: 1.2rem;
+}
+
+.capture-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
