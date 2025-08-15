@@ -75,7 +75,7 @@
 
   html {
     overflow-x: hidden;
-    scroll-behavior: smooth; /* Hace que el desplazamiento sea más fluido */
+    scroll-behavior: smooth;
   }
 }
 
@@ -111,13 +111,15 @@
     }
   }
 
-  .capture-video, .capture-audio {
-    .capture-video--container, .capture-audio--container {
+  .capture-video,
+  .capture-audio {
+    .capture-video--container,
+    .capture-audio--container {
       & > :first-child {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         & > :first-child {
           margin-inline-end: auto;
         }

@@ -4,10 +4,13 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "baseUrl": ".",
-  "paths": {
-    "@/*": ["./src/*"],
-    "@fonts/*": ["./src/fonts/*"],
-    "@components/*": ["./src/components/*"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@fonts/*": ["./src/fonts/*"],
+      "@components/*": ["./src/components/*"]
+    }
   }
 }
