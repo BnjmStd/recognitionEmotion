@@ -81,50 +81,51 @@ export const CaptureAudio = () => {
             <figure>
               <img src="./figure.png" alt="" />
             </figure>
-                    <div className="audio-info">
-          <div>
-            <h2>{recording ? "Grabando..." : "Listo para grabar"}</h2>
-            <small>Tap the record</small>
+            <div className="audio-info">
+              <div>
+                <h2>{recording ? "Grabando..." : "Listo para grabar"}</h2>
+                <small>Tap the record</small>
+              </div>
+              <ul className="audio-controls">
+                {!recording ? (
+                  <li>
+                    <button
+                      onClick={startRecording}
+                      aria-label="Iniciar grabación"
+                    >
+                      ⏺️
+                    </button>
+                  </li>
+                ) : (
+                  <li>
+                    <button
+                      onClick={stopRecordingAndSave}
+                      aria-label="Detener grabación y guardar"
+                    >
+                      ⏹️
+                    </button>
+                  </li>
+                )}
+
+                {audioUrl && !isPlaying && (
+                  <li>
+                    <button onClick={handlePlay} aria-label="Reproducir audio">
+                      ▶️
+                    </button>
+                  </li>
+                )}
+
+                {audioUrl && isPlaying && (
+                  <li>
+                    <button onClick={handlePause} aria-label="Pausar audio">
+                      ⏸️
+                    </button>
+                  </li>
+                )}
+              </ul>
+            </div>
           </div>
-          <ul className="audio-controls">
-            {!recording ? (
-              <li>
-                <button onClick={startRecording} aria-label="Iniciar grabación">
-                  ⏺️
-                </button>
-              </li>
-            ) : (
-              <li>
-                <button
-                  onClick={stopRecordingAndSave}
-                  aria-label="Detener grabación y guardar"
-                >
-                  ⏹️
-                </button>
-              </li>
-            )}
-
-            {audioUrl && !isPlaying && (
-              <li>
-                <button onClick={handlePlay} aria-label="Reproducir audio">
-                  ▶️
-                </button>
-              </li>
-            )}
-
-            {audioUrl && isPlaying && (
-              <li>
-                <button onClick={handlePause} aria-label="Pausar audio">
-                  ⏸️
-                </button>
-              </li>
-            )}
-          </ul>
         </div>
-          </div>
-        </div>
-
-
       </div>
 
       {audioUrl && (
