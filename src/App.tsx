@@ -2,6 +2,7 @@ import "./App.css";
 import { CaptureAudio } from "./components/CaptureAudio";
 import { CaptureVideo } from "./components/CaptureVideo";
 import { SaveRecording } from "./components/SavedRecording";
+import { SaveVideos } from "./components/SavedVideos";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <CaptureVideo />
         <CaptureAudio />
         <SaveRecording />
+        <SaveVideos />
       </div> 
     </main>
   );

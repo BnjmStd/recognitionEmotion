@@ -68,11 +68,6 @@ export const CaptureAudio = () => {
         <div className="capture-audio--container">
           <header>
             <h2>Audio Recording</h2>
-            <ul>
-              <li>
-                <button className="button-primary">Analyze Recording</button>
-              </li>
-            </ul>
           </header>
         </div>
 
